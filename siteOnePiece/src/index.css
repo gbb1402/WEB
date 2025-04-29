@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-900 text-white;
+  background: url('https://images-ext-1.discordapp.net/external/ukXcgRz9G6ug1rxRtraSQObcwrj9YJKGsBC4IIzLo7Y/https/images.pling.com/img/00/00/72/41/54/2074628/167916-thousand-sunny-one-piece-going-merry-atmosphere-nature-1280x720.jpg?format=webp&width=1423&height=800') center/cover fixed;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(17, 24, 39, 0.85);
+  z-index: -1;
+}
+
+.news-carousel .swiper-pagination-bullet {
+  @apply bg-blue-500;
+}
+
+.news-carousel .swiper-button-next,
+.news-carousel .swiper-button-prev {
+  @apply text-blue-500;
+}

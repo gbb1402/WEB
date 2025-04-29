@@ -1,0 +1,463 @@
+/* Container styles */
+.container {
+    padding: 0 1rem;
+  }
+  
+  .title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .filtersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .input {
+    padding: 0.5rem;
+    border: 1px solid;
+    border-radius: 0.375rem;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .select {
+    padding: 0.5rem;
+    border: 1px solid;
+    border-radius: 0.375rem;
+    color: rgb(0, 0, 0);
+  }
+  
+
+  .select option {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+  }
+  
+  
+  .resetButton {
+    padding: 0.5rem;
+    background-color: rgb(248, 113, 113);
+    color: rgb(226, 32, 32);
+    border-radius: 0.375rem;
+  }
+  
+  .resetButton:hover {
+    background-color: rgb(239, 68, 68);
+  }
+  
+  .cardsGrid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .cardsGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .cardsGrid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .cardsGrid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .cardItem {
+    background-color: rgb(0, 0, 0);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transform: translateY(0);
+    transition: transform 0.2s;
+  }
+  
+  .cardItem:hover {
+    transform: scale(1.05);
+  }
+  
+  .cardImage {
+    width: 100%;
+    height: 16rem;
+    object-fit: contain;
+  }
+  
+  .cardContent {
+    padding: 1rem;
+  }
+  
+  .cardTitle {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .cardInfo {
+    color: rgb(18, 102, 228);
+  }
+  
+  /* Pagination */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .pageButton {
+    padding: 0.25rem 0.75rem;
+    background-color: rgb(10, 82, 226);
+    border-radius: 0.375rem;
+  }
+  
+  .pageButton:hover {
+    background-color: rgb(209, 213, 219);
+  }
+  
+  .pageButtonActive {
+    background-color: rgb(138, 0, 0);
+    color: rgb(207, 30, 30);
+  }
+  
+  .ellipsis {
+    padding: 0 0.5rem;
+    font-size: 1.25rem;
+  }
+  
+.container {
+    padding: 0 1rem;
+  }
+  
+  .title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .filtersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .input {
+    padding: 0.5rem;
+    border: 1px solid rgb(156, 163, 175);
+    border-radius: 0.375rem;
+  }
+  
+  .select {
+    padding: 0.5rem;
+    border: 1px solid rgb(156, 163, 175);
+    border-radius: 0.375rem;
+  }
+  
+  .resetButton {
+    padding: 0.5rem;
+    background-color: rgb(248, 113, 113);
+    color: white;
+    border-radius: 0.375rem;
+  }
+  
+  .resetButton:hover {
+    background-color: rgb(239, 68, 68);
+  }
+  
+  .cardsGrid {
+    display: grid;
+    gap: 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .cardsGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .cardsGrid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .cardsGrid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .cardsGrid {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+  
+  .cardItem {
+    background-color: rgb(31, 41, 55);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transform: translateY(0);
+    transition: transform 0.2s;
+  }
+  
+  .cardItem:hover {
+    transform: scale(1.05);
+  }
+  
+  .cardImage {
+    width: 100%;
+    height: 12rem;
+    object-fit: contain;
+  }
+  
+  .cardContent {
+    padding: 0.75rem;
+  }
+  
+  .cardTitle {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .cardInfo {
+    color: rgb(209, 213, 219);
+    font-size: 0.875rem;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .pageButton {
+    padding: 0.25rem 0.75rem;
+    background-color: rgb(64, 122, 248);
+    color: rgb(0, 0, 0);
+    border-radius: 0.375rem;
+  }
+  
+  .pageButton:hover {
+    background-color: rgb(107, 187, 233);
+  }
+  
+  .pageButtonActive {
+    background-color: rgb(156, 11, 11);
+    color: white;
+  }
+  
+  .ellipsis {
+    padding: 0 0.5rem;
+    font-size: 1.25rem;
+    color: rgb(243, 243, 243);
+  }
+  
+.noCards {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: rgb(156, 163, 175);
+    font-size: 1.25rem;
+  }
+
+.defaultBackground {
+  background-color: white;
+}
+
+.redBackground {
+  background-color: #f87171; 
+}
+
+.greenBackground {
+  background-color: #4ade80; 
+}
+
+.blueBackground {
+  background-color: #60a5fa; 
+}
+
+.purpleBackground {
+  background-color: #c084fc; 
+}
+
+.blackBackground {
+  background-color: #374151; 
+}
+
+.yellowBackground {
+  background-color: #fde047;
+}
+
+.multicolorBackground {
+  background: linear-gradient(90deg, #8b5cf6 0%, #ec4899 50%, #f43f5e 100%);
+}
+.defaultBackground {
+  background-color: white;
+}
+
+.redBackground {
+  background-color: #f87171;
+}
+
+.greenBackground {
+  background-color: #4ade80;
+}
+
+.blueBackground {
+  background-color: #60a5fa;
+}
+
+.purpleBackground {
+  background-color: #c084fc;
+}
+
+.blackBackground {
+  background-color: #374151;
+}
+
+.yellowBackground {
+  background-color: #fde047;
+}
+
+.redGreenBackground {
+  background: linear-gradient(90deg, #f87171 0%, #4ade80 100%);
+}
+
+.redBlueBackground {
+  background: linear-gradient(90deg, #f87171 0%, #60a5fa 100%);
+}
+
+.greenBlueBackground {
+  background: linear-gradient(90deg, #4ade80 0%, #60a5fa 100%);
+}
+
+.blueBlackBackground {
+  background: linear-gradient(90deg, #60a5fa 0%, #374151 100%);
+}
+
+.purpleYellowBackground {
+  background: linear-gradient(90deg, #c084fc 0%, #fde047 100%);
+}
+
+.greenYellowBackground {
+  background: linear-gradient(90deg, #4ade80 0%, #fde047 100%);
+}
+
+.redYellowBackground {
+  background: linear-gradient(90deg, #f87171 0%, #fde047 100%);
+}
+
+
+.multicolorBackground {
+  background: linear-gradient(90deg, #8b5cf6 0%, #ec4899 50%, #f43f5e 100%);
+}
+
+.defaultBackground {
+  background-color: white;
+}
+
+.redBackground {
+  background-color: #f87171;
+}
+
+.greenBackground {
+  background-color: #4ade80;
+}
+
+.blueBackground {
+  background-color: #60a5fa;
+}
+
+.purpleBackground {
+  background-color: #c084fc;
+}
+
+.blackBackground {
+  background-color: #374151;
+}
+
+.yellowBackground {
+  background-color: #fde047;
+}
+
+.redGreenBackground {
+  background: linear-gradient(90deg, #f87171 0%, #4ade80 100%);
+}
+
+.redBlueBackground {
+  background: linear-gradient(90deg, #f87171 0%, #60a5fa 100%);
+}
+
+.redPurpleBackground {
+  background: linear-gradient(90deg, #f87171 0%, #c084fc 100%);
+}
+
+.redBlackBackground {
+  background: linear-gradient(90deg, #f87171 0%, #374151 100%);
+}
+
+.redYellowBackground {
+  background: linear-gradient(90deg, #f87171 0%, #fde047 100%);
+}
+
+.greenBlueBackground {
+  background: linear-gradient(90deg, #4ade80 0%, #60a5fa 100%);
+}
+
+.greenPurpleBackground {
+  background: linear-gradient(90deg, #4ade80 0%, #c084fc 100%);
+}
+
+.greenBlackBackground {
+  background: linear-gradient(90deg, #4ade80 0%, #374151 100%);
+}
+
+.greenYellowBackground {
+  background: linear-gradient(90deg, #4ade80 0%, #fde047 100%);
+}
+
+.bluePurpleBackground {
+  background: linear-gradient(90deg, #60a5fa 0%, #c084fc 100%);
+}
+
+.blueBlackBackground {
+  background: linear-gradient(90deg, #60a5fa 0%, #374151 100%);
+}
+
+.blueYellowBackground {
+  background: linear-gradient(90deg, #60a5fa 0%, #fde047 100%);
+}
+
+.purpleBlackBackground {
+  background: linear-gradient(90deg, #c084fc 0%, #374151 100%);
+}
+
+.purpleYellowBackground {
+  background: linear-gradient(90deg, #c084fc 0%, #fde047 100%);
+}
+
+.blackYellowBackground {
+  background: linear-gradient(90deg, #374151 0%, #fde047 100%);
+}
+
+.multicolorBackground {
+  background: linear-gradient(90deg, #8b5cf6 0%, #ec4899 50%, #f43f5e 100%);
+}
+
+.multicolorBackground {
+  box-shadow: 0 0 10px 2px rgba(255, 0, 150, 0.5);
+}
