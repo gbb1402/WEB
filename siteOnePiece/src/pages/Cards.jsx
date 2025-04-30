@@ -14,10 +14,17 @@ const colorMap = {
   Multicouleur: "Multicolor",
 };
 
-const types = ["Tout", "Leader", "Personnage", "Lieu", "Événement"];
+const typeMap = {
+  Tout: "all",
+  Leader: "leader",
+  Personnage: "character",
+  Événement: "event",
+  Lieu: "stage",
+};
+
+const types = Object.keys(typeMap);
 const sortOptions = ["Nom", "Rareté", "Puissance", "Coût"];
 
-// Couleurs simples
 const simpleColors = {
   Red: styles.redBackground,
   Green: styles.greenBackground,
@@ -27,7 +34,6 @@ const simpleColors = {
   Yellow: styles.yellowBackground,
 };
 
-// Combinaisons multicolores exhaustives
 const multicolorBackgrounds = {
   "Red/Green": styles.redGreenBackground,
   "Red/Blue": styles.redBlueBackground,
@@ -83,15 +89,20 @@ export default function Cards() {
         selectedColor === "Tout" ||
         (selectedColor === "Multicouleur"
           ? (card.color && card.color.includes("/"))
-          : (card.color && card.color.toLowerCase().includes(colorMap[selectedColor]?.toLowerCase()))
-        );
+          : (card.color &&
+              card.color.toLowerCase().includes(
+                colorMap[selectedColor]?.toLowerCase()
+              )));
 
       const matchesType =
         selectedType === "Tout" ||
-        (card.type && card.type.toLowerCase() === selectedType.toLowerCase());
+        (card.type &&
+          card.type.toLowerCase() ===
+            typeMap[selectedType]?.toLowerCase());
 
-      const matchesSearch =
-        card.name.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesSearch = card.name
+        .toLowerCase()
+        .includes(searchTerm.toLowerCase());
 
       return matchesColor && matchesType && matchesSearch;
     })
@@ -111,7 +122,10 @@ export default function Cards() {
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
-  const currentCards = filteredAndSortedCards.slice(indexOfFirstCard, indexOfLastCard);
+  const currentCards = filteredAndSortedCards.slice(
+    indexOfFirstCard,
+    indexOfLastCard
+  );
   const totalPages = Math.ceil(filteredAndSortedCards.length / cardsPerPage);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
@@ -174,8 +188,9 @@ export default function Cards() {
             <button
               key={index}
               onClick={() => paginate(num)}
-              className={`${styles.pageButton} ${currentPage === num ? styles.pageButtonActive : ""
-                }`}
+              className={`${styles.pageButton} ${
+                currentPage === num ? styles.pageButtonActive : ""
+              }`}
             >
               {num}
             </button>
@@ -196,7 +211,6 @@ export default function Cards() {
       <h1 className={styles.title}>Listes des cartes</h1>
 
       <div className={styles.filtersContainer}>
-        {/* Search and Filters */}
         <input
           type="text"
           placeholder="recherche par nom"
@@ -253,10 +267,7 @@ export default function Cards() {
           ))}
         </select>
 
-        <button
-          onClick={resetFilters}
-          className={styles.resetButton}
-        >
+        <button onClick={resetFilters} className={styles.resetButton}>
           Effacer
         </button>
       </div>
@@ -270,9 +281,14 @@ export default function Cards() {
               className={styles.cardItem}
             >
               <img
-                src={card.images?.small || "https://via.placeholder.com/300x400"}
+                src={
+                  card.images?.small ||
+                  "https://via.placeholder.com/300x400"
+                }
                 alt={card.name}
-                className={`${styles.cardImage} ${getCardBackground(card.color)}`}
+                className={`${styles.cardImage} ${getCardBackground(
+                  card.color
+                )}`}
               />
               <div className={styles.cardContent}>
                 <h3 className={styles.cardTitle}>{card.name}</h3>
@@ -283,9 +299,7 @@ export default function Cards() {
             </Link>
           ))
         ) : (
-          <div className={styles.noCards}>
-            Carte non trouver
-          </div>
+          <div className={styles.noCards}>Carte non trouvée</div>
         )}
       </div>
 
